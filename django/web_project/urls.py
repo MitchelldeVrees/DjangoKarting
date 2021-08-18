@@ -22,7 +22,7 @@ from drivers.views import driver_detail_view, create_driver, update_driver, dele
 urlpatterns = [
     path('', homepage_view, name='home'),
     path('drivers/', driver_detail_view),
-    path('standings/', standing_view),
+    path('competition/', standing_view),
     path('adddriver/', create_driver),
     path('updatedriver/<str:id>/', update_driver, name="update_driver"),
     path('deletedriver/<str:id>/', delete_driver, name="delete_driver"),
