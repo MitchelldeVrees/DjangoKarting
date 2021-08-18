@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="form-group w-50" style="margin-left: 25%; margin-top: 50px;">
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label> Name </label>
+    {{ form.name }}
+        </div>
+
+      <div class="form-group col-md-6">
+        <label> Age </label>
+        {{ form.age }}
+      </div>
+
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label> Nationality </label>
+        {{ form.nationality }}       
+       </div>
+
+      <div class="form-group col-md-6">
+        <label> Wins </label>
+        {{ form.wins }}
+      </div>
+
+    </div>
+
+    <label> Summarry </label>
+
+    {{ form.summarry }}
+     
+
+    <input type="submit" class="btn btn-primary mt-4 mb-2 " name="Submit">
+  </form>
+ 
+</div>
+
+<!-- 
+<form>
+    <div class="form-group">
+      <label for="FormNameDriverInput">Name driver</label>
+      <input type="text" class="form-control" id="FormNameDriverInput" placeholder="Max Verstappen">
+    </div>
+    <div class="form-group">
+      <label for="FormAgeDriverInput">Age </label>
+      <input type="number" class="form-control" id="FormAgeDriverInput" placeholder="18">
+    </div>
+    <div class="form-group">
+      <label for="FormNationalityDriver">Nationality</label>
+      <select class="form-control" id="FormNationalityDriver">
+        <option value="Netherlands">Netherlands</option>
+        <option value="Germany">Germany</option>
+        <option value="UK">united Kingdom</option>
+        <option value="France">France</option>
+        <option value="United States">United States</option>
+        <option value="Rusia">Rusia</option>
+        <option value="Spain">Spain</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="FormSummarryDriver">Describe driver</label>
+      <textarea class="form-control" id="FormSummarryDriver" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="FormWinsDriver">Amount of wins</label>
+      <input type="number" class="form-control" id="FormWinsDriver" placeholder="1">
+    </div>
+    <button> SEND </button>
+  </form> -->
+  {% endblock %}

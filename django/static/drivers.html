@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for item in all %}
+<div class="card mb-5 mt-3 ml-4" style="width: 18rem; display: inline-block ">
+    <div class="card-body ">
+      <h5 class="card-title">{{ item.name }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ item.age }} years old, {{ item.nationality}}</h6>
+      <p class="card-text"> {{ item.summarry }}</p>
+     
+    </div>
+    <a href="{% url 'delete_driver' id=item.id %}" class="btn btn-primary float-right ml-2"> <i class="far fa-trash-alt"></i></a>
+    <a href="{% url 'update_driver' id=item.id %}" class="btn btn-primary float-right "> <i class="fas fa-pen"></i></a>
+  </div>
+
+{% endfor %}
+
+<div class="card mb-5 mt-3 ml-4" style="width: 18rem; display: inline-block">
+  <div class="card-body">
+    <h5 class="card-title">Add a new driver</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Add a new driver</h6>
+    <a href="/adddriver" class="btn btn-primary bg-success"> <i class="fas fa-plus "></i></a>
+  </div>
+</div>
+
+{% endblock %}
