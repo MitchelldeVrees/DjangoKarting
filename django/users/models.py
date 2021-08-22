@@ -1,25 +1,17 @@
-# from django.db import models
+from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
+class Users(models.Model):
+   
+    name = models.TextField(max_length=30, blank=False)
+    birthdate = models.DateField(null=True, blank=True)
+    email= models.EmailField(max_length=50, blank=False)
 
-# class Users(models.Model):
-
-#     choice = [
-#         ('United Kingdom', 'United Kingdom'),
-#         ('Spain', 'Spain'),
-#         ('Netherlands', 'Netherlands'),
-#         ('Belgium', 'Belgium '),
-#         ('Germany', 'Germany'),
-#         ('United States', 'United States'),
-#         ('Brasil', 'Brasil '),
-#         ('Japan', 'Japan'),
-#         ('Australia', 'Australia'),
-
-#     ]
-
-#     name = models.TextField()
-#     birthdate = models.DateField()
-#     nationality= models.CharField(max_length=255)
-#     email= models.EmailField()
-#     password= models.TextField()
-#     profilePic= models.ImageField()
+@receiver(post_save, sender=User)
+def update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        User.objects.create(user=instance)
+    instance.profile.save()

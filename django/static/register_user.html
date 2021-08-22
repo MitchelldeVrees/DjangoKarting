@@ -9,8 +9,37 @@
 <br/><br/>
 <form action="", method=POST>
   {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label> Name </label>
+      {{ form.username }}
+      </div>
 
-  {{ form.as_p }}
+    <div class="form-group col-md-6">
+      <label> Email </label>
+      {{ form.email }}
+    </div>
+
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label> Birthdate </label>
+      {{ form.birthdate }}       
+     </div>
+
+    <div class="form-group col-md-6">
+      <label> Password </label>
+      {{ form.password1 }}
+    </div>
+    <div class="form-group col-md-6">
+      {{ form.password2 }}
+    </div>
+
+  </div>
+
+
+  {{ form.summarry }}
 
   <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
 </form>
