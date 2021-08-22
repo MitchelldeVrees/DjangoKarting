@@ -19,13 +19,15 @@ from django.urls.conf import include
 
 from pages.views import homepage_view, standing_view
 from drivers.views import driver_detail_view, create_driver, update_driver, delete_driver
-from users.views import login_user
+from users.views import login_user,logout_user, register_user
 
 urlpatterns = [
     path('', homepage_view, name='home'),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
     path('login_user', login_user, name="login"),
+    path('logout_user', logout_user, name="logout"),
+    path('register_user', register_user, name="register"),
     path('drivers/', driver_detail_view),
     path('competition/', standing_view),
     path('adddriver/', create_driver),

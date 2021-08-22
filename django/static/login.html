@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<ul class="list-group">
-    <li class="list-group-item">LOGIN</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-
-  
+<div class="form-group w-50" style="margin-left: 25%; margin-top: 50px;">
+  <h1> Login </h1>
+<br/><br/>
+<form action="", method=POST>
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="nameUser" class="form-label">User name</label>
+    <input type="user" class="form-control" name="nameUser" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="passwordUser" class="form-label">Password</label>
+    <input type="password" class="form-control" name="passwordUser">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+</form>
+<br/><br/>
+</div>
 {% endblock %}

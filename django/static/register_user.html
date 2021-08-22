@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-group w-50" style="margin-left: 25%; margin-top: 50px;">
+  {% if form.errors %}
+  <p> There was an error with one of the fields<p>
+    {% endif %}
+  <h1> Register </h1>
+<br/><br/>
+<form action="", method=POST>
+  {% csrf_token %}
+
+  {{ form.as_p }}
+
+  <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+</form>
+
+<br/><br/>
+</div>
+{% endblock %}
