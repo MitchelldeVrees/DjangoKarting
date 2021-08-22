@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages',
     'drivers',
+    'users',
     "django_static_fontawesome",
     'crispy_forms',
 ]
