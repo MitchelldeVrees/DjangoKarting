@@ -33,7 +33,6 @@ def register_user(request):
         if form.is_valid():
             user = form.save()
             user.refresh_from_db()  
-            user.profile.birth_date = form.cleaned_data.get('birth_date')
             user.save()
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=user.username, password=raw_password)
@@ -43,19 +42,6 @@ def register_user(request):
         form = userForm()
     return render(request, 'register_user.html', {'form': form})
 
-    # if request.method == "POST":
-    #     form = userForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #         username = form.cleaned_data['name']
-    #         password = form.cleaned_data['password1']
-    #         user = authenticate(username = username, password=password)
-    #         login(request, user)
-    #         messages.success(request,(' Registration succesful'))
-    #         return redirect('home')
-    # else:
-    #     form = userForm()
-        
-    #     return render(request, 'register_user.html', {'form': form })
-
+def forgot_password(request):
+    return render(request, 'password_reset.html',{})
 

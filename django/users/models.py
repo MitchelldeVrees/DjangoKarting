@@ -7,7 +7,6 @@ from django.dispatch import receiver
 class Users(models.Model):
    
     name = models.TextField(max_length=30, blank=False)
-    birthdate = models.DateField(null=True, blank=True)
     email= models.EmailField(max_length=50, blank=False)
 
 @receiver(post_save, sender=User)

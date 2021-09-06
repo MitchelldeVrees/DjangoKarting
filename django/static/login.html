@@ -5,7 +5,9 @@
   <h1> Login </h1>
 <br/><br/>
 <form action="", method=POST>
+
   {% csrf_token %}
+  
   <div class="mb-3">
     <label for="nameUser" class="form-label">User name</label>
     <input type="user" class="form-control" name="nameUser" aria-describedby="emailHelp">

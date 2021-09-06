@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+#SUPER USER LOGIN
+# Username: Mitchell
+# email: vrieskou@ziggo.nl
+# password: Mitch#2001#
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -39,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages',
     'drivers',
-    'users',
     "django_static_fontawesome",
     'crispy_forms',
 ]
@@ -132,3 +136,4 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

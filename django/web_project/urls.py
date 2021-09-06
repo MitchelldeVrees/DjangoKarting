@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from django.contrib.auth import views as auth_views
 
 from pages.views import homepage_view, standing_view
 from drivers.views import driver_detail_view, create_driver, update_driver, delete_driver
-from users.views import login_user,logout_user, register_user
+from users.views import login_user,logout_user, register_user, forgot_password
 
 urlpatterns = [
     path('', homepage_view, name='home'),
@@ -33,6 +34,8 @@ urlpatterns = [
     path('adddriver/', create_driver),
     path('updatedriver/<str:id>/', update_driver, name="update_driver"),
     path('deletedriver/<str:id>/', delete_driver, name="delete_driver"),
+    path('reset_password/', auth_views.PasswordResetView.as_view()),
+
 
 
     path('admin/', admin.site.urls),
