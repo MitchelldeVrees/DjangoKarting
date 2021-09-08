@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% for item in all %}
+<div class="card mb-5 mt-3 ml-4" style="width: 18rem; display: inline-block ">
+    <div class="card-body ">
+      <h5 class="card-title">{{ item.nameCompetition }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ item.lapsLength }} length</h6>
+      <p class="card-text"> {{ item.driver }}</p>
+     
+    </div>
+   
+  </div>
 
-<ul class="list-group">
-    <li class="list-group-item"></li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
+{% endfor %}
 
-  
+
 {% endblock %}

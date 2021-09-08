@@ -21,6 +21,7 @@ from django.contrib.auth import views as auth_views
 from pages.views import homepage_view, standing_view
 from drivers.views import driver_detail_view, create_driver, update_driver, delete_driver
 from users.views import login_user,logout_user, register_user, forgot_password
+from competition.views import competition_detail_view, create_competition, delete_competition, update_competition
 
 urlpatterns = [
     path('', homepage_view, name='home'),
@@ -29,8 +30,14 @@ urlpatterns = [
     path('login_user', login_user, name="login"),
     path('logout_user', logout_user, name="logout"),
     path('register_user', register_user, name="register"),
+
+    path('competition/', competition_detail_view),
+    path('addcompetition/', create_competition),
+    path('updatecompetition/<str:id>/', update_competition),
+    path('deletecompetition/<str:id>/', delete_competition),
+
+
     path('drivers/', driver_detail_view),
-    path('competition/', standing_view),
     path('adddriver/', create_driver),
     path('updatedriver/<str:id>/', update_driver, name="update_driver"),
     path('deletedriver/<str:id>/', delete_driver, name="delete_driver"),

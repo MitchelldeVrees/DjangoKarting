@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()
 """
 Django settings for web_project project.
 
@@ -12,11 +14,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
-#SUPER USER LOGIN
-# Username: Mitchell
-# email: vrieskou@ziggo.nl
-# password: Mitch#2001#
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%h!@0%h^=n%$b4q!m(w61@0vr+w7ti=ehhp(83ody#=n&&gn@u'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -46,6 +43,7 @@ INSTALLED_APPS = [
     'drivers',
     "django_static_fontawesome",
     'crispy_forms',
+    'competition',
 
 ]
 
@@ -145,5 +143,5 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST ="smtp.gmail.com"
 EMAIL_PORT=587
 EMAIL_USE_TLS= True
-EMAIL_HOST_USER="mitchelldvrees@gmail.com"
-EMAIL_HOST_PASSWORD="#####"
+EMAIL_HOST_USER=str(os.getenv('EMAIL'))
+EMAIL_HOST_PASSWORD=str(os.getenv('EMAIL_PASSWORD'))
