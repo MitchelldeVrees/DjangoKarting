@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="form-group w-50" style="margin-left: 25%; margin-top: 50px;">
@@ -11,32 +12,7 @@
   
   {% csrf_token %}
 
-    <div class="form-group col-md-6">
-      <label> Name </label>
-      <p />
-
-      {{ form.username }}
-      </div>
-
-    <div class="form-group col-md-6">
-      <label> Email </label>
-      <p />
-
-      {{ form.email }}
-    </div>
-
-    <div class="form-group col-md-6">
-      <label> Password </label>
-      <p />
-
-      {{ form.password1 }}
-    </div>
-    <div class="form-group col-md-6">
-      <label> Password Check </label>
-      <p />
-      {{ form.password2 }}
-    </div>
-
+    {{ form|crispy }}
 
   <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
 </form>

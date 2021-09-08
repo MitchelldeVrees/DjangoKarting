@@ -5,7 +5,6 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import userForm
 
 
-
 def login_user(request):
     if request.method == "POST":
         username = request.POST['nameUser']
