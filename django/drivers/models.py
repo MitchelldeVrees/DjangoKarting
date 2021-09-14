@@ -21,7 +21,6 @@ class Drivers(models.Model):
     nationality = models.CharField(max_length=255, choices=choice)
     summarry = models.TextField(default='',max_length=100)
     wins = models.IntegerField(default=0, validators=[MaxValueValidator(999), MinValueValidator(0)])
-    
+
     def __str__(self):
         return self.name
-

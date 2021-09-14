@@ -9,9 +9,8 @@ class Competition(models.Model):
         ('Formule 3', 'Formule 3'),
         ('Porsche', 'Porsche '),
         ('W series', 'W series'),
-        
-
     ]
+    
     nameCompetition = models.TextField(max_length=150)
     lapsLength = models.IntegerField(default=0)
     typeCompetition = models.CharField(max_length=255, choices=choice)
