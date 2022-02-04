@@ -22,6 +22,7 @@ from pages.views import homepage_view, standing_view
 from drivers.views import driver_detail_view, create_driver, update_driver, delete_driver
 from users.views import login_user,logout_user, register_user, forgot_password
 from competition.views import competition_detail_view
+
 urlpatterns = [
     path('', homepage_view, name='home'),
     path('users/', include('users.urls')),

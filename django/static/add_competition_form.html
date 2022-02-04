@@ -5,7 +5,33 @@
 
   <form action="" method="POST">
     {% csrf_token %}
-    {{form|crispy}}
+    
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label> Country </label>
+        {{ form.country }}
+        </div>
+
+      <div class="form-group col-md-6">
+        <label> length </label>
+        {{ form.length }}
+      </div>
+
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label> Rounds </label>
+        {{ form.rounds }}       
+       </div>
+
+      <div class="form-group col-md-6">
+        <label> Drivers </label>
+        <i class="fas fa-info-circle">INFORMATIOn</i>
+        {{ form.drivers }}
+      </div>
+
+    </div>
      
 
     <input type="submit" class="btn btn-primary mt-4 mb-2 " name="Submit">
@@ -13,4 +39,4 @@
  
 </div>
 
-  {% endblock %}
+{% endblock %}
