@@ -1,8 +1,10 @@
 from django.db import models
+
 from drivers.models import Drivers
 
-class Competition(models.Model):
-    choice = [
+
+class Competitions(models.Model):
+    countries = [
         ('United Kingdom', 'United Kingdom'),
         ('Spain', 'Spain'),
         ('Netherlands', 'Netherlands'),
@@ -14,8 +16,18 @@ class Competition(models.Model):
         ('Australia', 'Australia'),
     ]
 
+    type = [
+        ('Formula1','Formula1'),
+        ('Formula2','Formula2'),
+        ('Formula3','Formula3'),
+        ('Karting','Karting'),
+    ]
+
     name = models.TextField(max_length=50)
-    country = models.CharField(max_length=255, choices=choice)
-    length = models.IntegerField(default=0)
-    rounds = models.IntegerField(default=0)
-    drivers = models.ManyToManyField(Drivers)
+    country = models.CharField(max_length=255, choices=countries)
+    numberOfRaces = models.IntegerField(default=0)
+    type = models.CharField(max_length=255, choices=type)
+    drivers = models.ForeignKey(Drivers,on_delete=models.CASCADE)
+
+    def __str__(Competitions):
+        return Competitions.name

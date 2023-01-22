@@ -10,7 +10,7 @@ class driverForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'age': forms.TextInput(attrs={'class': 'form-control'}),
             'nationality': forms.Select(attrs={'class': 'form-control'}),
-            'summarry': forms.Textarea(attrs={'class': 'form-control'}),
+            'summary': forms.Textarea(attrs={'class': 'form-control'}),
             'wins': forms.TextInput(attrs={'class': 'form-control'})
 
         }

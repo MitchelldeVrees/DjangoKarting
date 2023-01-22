@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'drivers',
     "django_static_fontawesome",
     'crispy_forms',
-    'competition',
+    'competitions',
 
 ]
 

@@ -5,30 +5,34 @@
 
   <form action="" method="POST">
     {% csrf_token %}
-    
-    <div class="form-row">
+
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label> Name </label>
+        {{ form.name }}
+        </div>
+
+
       <div class="form-group col-md-6">
         <label> Country </label>
         {{ form.country }}
         </div>
-
-      <div class="form-group col-md-6">
-        <label> length </label>
-        {{ form.length }}
-      </div>
-
     </div>
 
-    <div class="form-row">
+      <div class="form-row">
       <div class="form-group col-md-6">
-        <label> Rounds </label>
-        {{ form.rounds }}       
-       </div>
+        <label> Amount of races </label>
+        {{ form.numberOfRaces }}
+      </div>
 
       <div class="form-group col-md-6">
         <label> Drivers </label>
-        <i class="fas fa-info-circle">INFORMATIOn</i>
         {{ form.drivers }}
+      </div>
+
+          <div class="form-group col-md-6">
+        <label> Type </label>
+        {{ form.type }}
       </div>
 
     </div>
