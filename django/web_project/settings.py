@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django_static_fontawesome",
     'crispy_forms',
     'competitions',
+    'races',
 
 ]
 

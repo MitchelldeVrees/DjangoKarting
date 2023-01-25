@@ -2,7 +2,8 @@ from django.forms import ModelForm
 from django import forms
 from .models import Competition
 
-class  competitionForm(forms.ModelForm):
+
+class competitionForm(forms.ModelForm):
     class Meta:
         model = Competition
         fields = '__all__'
@@ -13,4 +14,3 @@ class  competitionForm(forms.ModelForm):
             'Driver': forms.SelectMultiple(attrs={'class': 'form-control'}),
 
         }
-
