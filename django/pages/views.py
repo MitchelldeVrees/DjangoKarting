@@ -9,4 +9,4 @@ def drivers_view(request, *args, **kwargs):
     return render(request, "drivers.html",{})
 
 def standing_view(request, *args, **kwargs):
-    return render(request, "competition.html",{})
+    return render(request, "competitions.html",{})
