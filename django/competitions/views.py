@@ -8,19 +8,19 @@ def competition_detail_view(request):
     obj = Competition.objects.all
 
     return render(request, "competition.html", {'all':obj})
-#
-# def create_competition(request):
-#     form = competitionForm()
-#     if request.method == 'POST':
-#
-#             form = competitionForm(request.POST)
-#
-#             if form.is_valid():
-#                 form.save()
-#                 return redirect('/')
-#
-#     return render(request, 'add_driver_form.html', {'form':form})
-#
+
+def create_competition(request):
+    form = competitionForm()
+    if request.method == 'POST':
+
+            form = competitionForm(request.POST)
+
+            if form.is_valid():
+                form.save()
+                return redirect('/')
+
+    return render(request, 'add_competition_form.html', {'form':form})
+
 # def update_competition(request, id):
 #         driver = Drivers.objects.get(id=id)
 #         form = competitionForm(instance=driver)
