@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="form-group w-50" style="margin-left: 25%; margin-top: 50px;">
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label> Name </label>
+    {{ form.name }}
+        </div>
+
+      <div class="form-group col-md-6">
+        <label> Laps </label>
+        {{ form.laps }}
+      </div>
+
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label> Visitors </label>
+        {{ form.visitors }}
+       </div>
+
+        <div class="form-group col-md-6">
+        <label> Visitors </label>
+        {{ form.visitors }}
+       </div>
+
+
+
+    </div>
+
+
+
+
+    <input type="submit" class="btn btn-primary mt-4 mb-2 " name="Submit">
+  </form>
+
+</div>
+{% endblock %}
