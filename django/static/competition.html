@@ -1,18 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% for item in all %}
-<div class="card mb-5 mt-3 ml-4" style="width: 18rem; display: inline-block ">
-    <div class="card-body ">
-      <h5 class="card-title">{{ item.name }}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{ item.races }} length</h6>
-      <p class="card-text"> {{ item.type }}</p>
-     
+<div class="containter">
+    <div class="row">
+
+        {% for item in all %}
+        <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-5 mt-3 ml-4" style="width: 18rem; height: 8rem; display: inline-block ">
+                <div class="card-body ">
+                    <h5 class="card-title">{{ item.name }} </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ item.races }} Races</h6>
+                    <p class="card-text"> {{ item.type }}</p>
+
+                    <a href="/seecompetition" class="btn btn-primary">See competition</a>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-5 mt-3 ml-4" style="width: 18rem; display: inline-block">
+                <div class="card-body">
+                    <h5 class="card-title">Add a new competition</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Add a new competition</h6>
+                    <a href="/addcompetitions" class="btn btn-primary bg-success"> <i class="fas fa-plus "></i></a>
+                </div>
+            </div>
+        </div>
     </div>
-   
-  </div>
-
-{% endfor %}
-
+</div>
 
 {% endblock %}

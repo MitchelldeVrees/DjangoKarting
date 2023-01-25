@@ -17,9 +17,15 @@ def create_competition(request):
 
             if form.is_valid():
                 form.save()
-                return redirect('/')
+                return redirect('competition.html')
 
     return render(request, 'add_competition_form.html', {'form':form})
+
+def see_competition(request):
+    obj = Competition.objects.all
+
+    return render(request, 'see_competition.html',{'all',obj})
+
 
 # def update_competition(request, id):
 #         driver = Drivers.objects.get(id=id)
